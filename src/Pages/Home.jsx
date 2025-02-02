@@ -1,9 +1,11 @@
 import React from 'react'
+import Genre from '../components/Genre'
 
 const Home = () => {
     return (
-        <div>
-
+        <div className='text-white'>
+            <Genre />
+            home
         </div>
     )
 }
