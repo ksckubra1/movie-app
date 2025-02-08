@@ -8,3 +8,4 @@
 - Tailwindcss
 - React Icons
 - React Paginate
+- React Loading Indicators
