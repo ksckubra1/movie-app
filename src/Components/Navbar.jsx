@@ -35,7 +35,7 @@ const Navbar = () => {
                     </li>
                     <li className="relative h-14 w-8 flex items-center">
                         <Link to={MY_LIST}>
-                            <div className={`${favoriteMovies.length === 0 ? "hidden" : ""} top-0 absolute right-0 rounded-full border-2 text-[10px] text-yellow-700 font-bold py-0.5 px-1.5  border-yellow-700`}>
+                            <div className={`${favoriteMovies.length === 0 ? " hidden" : ""} top-0 absolute right-0 rounded-full border-2 text-[10px] text-yellow-700 font-bold py-0.5 px-1.5  border-yellow-700`}>
                                 {
                                     favoriteMovies.length > 0 ?
                                         favoriteMovies.length :
