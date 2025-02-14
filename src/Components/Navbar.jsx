@@ -6,9 +6,15 @@ import { Link } from 'react-router-dom';
 import React from 'react'
 
 import { HOME, MY_LIST } from '../constants/path'
+import { useSelector } from "react-redux";
 
 
 const Navbar = () => {
+
+    const { favoriteMovies } = useSelector(store => store.favorites)
+
+
+
 
     return (
         <nav className='flex justify-between bg-[#000000] h-20 items-center px-20'>
@@ -27,8 +33,15 @@ const Navbar = () => {
                             <TiHome className='text-lg text-white hover:text-yellow-700' />
                         </Link>
                     </li>
-                    <li>
+                    <li className="relative h-14 w-8 flex items-center">
                         <Link to={MY_LIST}>
+                            <div className={`${favoriteMovies.length === 0 ? "hidden" : ""} top-0 absolute right-0 rounded-full border-2 text-[10px] text-yellow-700 font-bold py-0.5 px-1.5  border-yellow-700`}>
+                                {
+                                    favoriteMovies.length > 0 ?
+                                        favoriteMovies.length :
+                                        ""
+                                }
+                            </div>
                             <FaHeart className='text-md text-white hover:text-yellow-700' />
                         </Link>
 
