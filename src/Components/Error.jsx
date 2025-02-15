@@ -1,11 +1,10 @@
 import React from 'react'
 
-const Error = ({ error }) => {
+const Error = () => {
     return (
-        <div>
-            <div className='text-white h-screen justify-center items-center flex'>{error}</div>
 
-        </div>
+        <div className='text-white text-lg flex h-screen justify-center items-center w-full'>... Unable to load ...</div>
+
     )
 }
 

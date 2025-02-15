@@ -10,16 +10,26 @@ const MyList = () => {
     const tmdbAPI = new TMDBAPI()
 
     return (
-        <div className='h-full flex flex-col items-center py-20'>
-            <div className="grid grid-cols-4 gap-10">
-                {
-                    favoriteMovies && favoriteMovies.map((movie) => {
-                        return (
-                            <MovieCard key={movie.id} movie={movie} />
-                        )
-                    })
-                }
-            </div>
+        <div className='min-h-screen flex flex-col items-center justify-center pb-20'>
+
+            {
+                favoriteMovies.length > 0 ?
+                    <div className="h-full">
+                        <div className="text-white py-10 md:text-2xl px-4 xl:px-0 sm:text-xl ">Your Favorite Movies</div>
+
+                        <div className="grid grid-cols-3 md:grid-cols-4 gap-10 px-4 xl:px-0">
+                            {
+                                favoriteMovies && favoriteMovies.map((movie) => {
+                                    return (
+                                        <MovieCard key={movie.id} movie={movie} />
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                    :
+                    <div className="text-white text-lg">... Favorite movie not added ...</div>
+            }
         </div>
     )
 }
